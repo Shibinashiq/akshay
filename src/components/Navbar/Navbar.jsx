@@ -82,15 +82,23 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Fullscreen Animated Mobile Menu */}
+      {/* Modern Glassmorphic Fullscreen Mobile Navigation Drawer */}
       <div className={`navbar-mobile-fullscreen ${mobileOpen ? 'active' : ''}`} role="dialog" aria-label="Mobile navigation menu">
-        
-        {/* Travel Animations */}
-        <div className="mobile-bg-animations">
-          <div className="cloud cloud-1">☁️</div>
-          <div className="cloud cloud-2">☁️</div>
-          <div className="cloud cloud-3">☁️</div>
-          <div className="flying-plane">✈️</div>
+        <div className="mobile-nav-header">
+          <div className="mobile-nav-brand">
+            <img src={logoImg} alt="Roamway Tours Logo" className="mobile-nav-logo" />
+            <div className="mobile-brand-meta">
+              <span className="mobile-brand-title">ROAMWAY TOURS</span>
+              <span className="mobile-brand-sub">VIP TRAVEL & VISAS</span>
+            </div>
+          </div>
+          <button 
+            className="mobile-nav-close" 
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close navigation"
+          >
+            ✕
+          </button>
         </div>
 
         <div className="navbar-mobile-fullscreen-inner">
@@ -100,21 +108,28 @@ function Navbar() {
                 key={link.label}
                 href={link.href}
                 className={`navbar-mobile-fullscreen-link ${activeLink === link.label ? 'active' : ''}`}
-                style={{ '--delay': `${0.2 + (index * 0.1)}s` }}
+                style={{ '--delay': `${0.1 + (index * 0.08)}s` }}
                 onClick={(e) => {
                   e.preventDefault();
                   handleLinkClick(link.label, link.href);
                 }}
               >
-                {link.label}
+                <span className="mobile-link-num">0{index + 1}</span>
+                <span className="mobile-link-text">{link.label}</span>
+                <span className="mobile-link-arrow">→</span>
               </a>
             ))}
           </div>
-          
-          <div className="navbar-mobile-fullscreen-actions">
-            <a href="https://wa.me/15551234567" className="navbar-whatsapp" onClick={() => setMobileOpen(false)}>
-              <span className="navbar-whatsapp-icon">💬</span>
-              WhatsApp Us
+
+          {/* Quick Mobile Contact Buttons */}
+          <div className="navbar-mobile-quick-contact">
+            <a href="tel:+15551234567" className="mobile-contact-card mobile-contact-call">
+              <span className="mobile-contact-icon">📞</span>
+              <span>Call Us</span>
+            </a>
+            <a href="https://wa.me/15551234567" className="mobile-contact-card mobile-contact-wa">
+              <span className="mobile-contact-icon">💬</span>
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>
