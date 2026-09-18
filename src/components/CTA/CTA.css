@@ -1,6 +1,6 @@
 /* ===== Modern Glassmorphism CTA Banner ===== */
 .cta-banner {
-  padding: 120px 0;
+  padding: 100px 0;
   /* Premium parallax photo background */
   background: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80') center/cover no-repeat fixed;
   position: relative;
@@ -12,7 +12,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.4);
+  background: rgba(15, 23, 42, 0.55);
 }
 
 .cta-banner-container {
@@ -23,7 +23,7 @@
   position: relative;
   z-index: 2;
   /* Glass effect */
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -31,69 +31,17 @@
   box-shadow: 0 30px 60px rgba(0,0,0,0.3);
 }
 
-/* ===== Premium 3D Hologram Flight Scene ===== */
-.cta-premium-3d-scene {
-  perspective: 1200px;
-  width: 140px;
-  height: 140px;
-  margin: 0 auto 40px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
-}
-
-.cta-3d-ring {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 2px dashed rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-  transform: rotateX(70deg) rotateZ(0deg);
-  animation: spinRing 12s linear infinite;
-  box-shadow: inset 0 0 20px rgba(255,255,255,0.05);
-}
-
-.cta-3d-ring-2 {
-  position: absolute;
-  width: 135%;
-  height: 135%;
-  border: 1px solid rgba(245, 158, 11, 0.4); /* Primary color */
-  border-radius: 50%;
-  transform: rotateX(70deg) rotateZ(0deg);
-  animation: spinRing reverse 18s linear infinite;
-  box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
-}
-
-.cta-3d-flight-wrapper {
-  position: relative;
-  transform-style: preserve-3d;
-  animation: floatFlight 3s ease-in-out infinite alternate;
-}
-
-.premium-flight {
-  font-size: 3.5rem;
-  display: block;
-  filter: drop-shadow(0 20px 15px rgba(0,0,0,0.6));
-  animation: bankFlight 5s ease-in-out infinite alternate;
-  color: white; /* Applies to icon if it's an SVG, otherwise text-shadow for emojis */
-  text-shadow: 0 0 20px rgba(255,255,255,0.4);
-}
-
-@keyframes spinRing {
-  0% { transform: rotateX(70deg) rotateZ(0deg); }
-  100% { transform: rotateX(70deg) rotateZ(360deg); }
-}
-
-@keyframes floatFlight {
-  0% { transform: translateY(12px); }
-  100% { transform: translateY(-12px); }
-}
-
-@keyframes bankFlight {
-  0% { transform: rotateZ(35deg) rotateY(-20deg) rotateX(15deg); }
-  100% { transform: rotateZ(55deg) rotateY(20deg) rotateX(-15deg); }
+.cta-subtitle {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--primary);
+  margin-bottom: 16px;
+  background: rgba(139, 195, 74, 0.15);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(139, 195, 74, 0.3);
 }
 
 .cta-banner-title {
@@ -106,7 +54,7 @@
 }
 
 .cta-banner-title span {
-  color: var(--primary); /* Amber gold highlight */
+  color: var(--primary);
 }
 
 .cta-banner-description {
@@ -124,16 +72,11 @@
   flex-wrap: wrap;
 }
 
-/* Hide old decorative emojis as they don't fit the premium glassmorphism theme */
-.cta-banner-decor {
-  display: none;
-}
-
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .cta-banner {
     padding: 80px 20px;
-    background-attachment: scroll; /* Fixes fixed-background issues on iOS */
+    background-attachment: scroll;
   }
   
   .cta-banner-container {

@@ -4,15 +4,6 @@ import './Hero.css';
 function Hero() {
   return (
     <section className="hero" id="home" aria-label="Hero section">
-      {/* 3D Animated Global Travel Background */}
-      <div className="hero-global-animations">
-        <div className="hero-cloud hero-cloud-1">☁️</div>
-        <div className="hero-cloud hero-cloud-2">☁️</div>
-        <div className="hero-cloud hero-cloud-3">☁️</div>
-        <div className="hero-animated-plane">✈️</div>
-        <div className="hero-animated-balloon">🎈</div>
-      </div>
-
       <div className="hero-container">
         {/* Left Content */}
         <div className="hero-content">
@@ -88,11 +79,6 @@ function Hero() {
               <span className="hero-float-card-icon" dangerouslySetInnerHTML={{ __html: '<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' }} />
               4.9 Rated
             </div>
-          </div>
-
-          {/* Dashed flight path */}
-          <div className="hero-flight-path">
-            <span className="hero-plane-icon">✈️</span>
           </div>
         </div>
       </div>

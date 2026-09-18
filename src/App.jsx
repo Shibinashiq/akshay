@@ -27,15 +27,6 @@ function App() {
 
   return (
     <div className="app">
-      {/* Global 3D Floating Background Layer */}
-      <div className="global-3d-background">
-        <div className="bg-3d-element bg-3d-plane">✈️</div>
-        <div className="bg-3d-element bg-3d-globe">🌍</div>
-        <div className="bg-3d-element bg-3d-balloon">🎈</div>
-        <div className="bg-3d-element bg-3d-cloud-1">☁️</div>
-        <div className="bg-3d-element bg-3d-cloud-2">☁️</div>
-      </div>
-      
       <Navbar />
       <main>
         <Hero />
