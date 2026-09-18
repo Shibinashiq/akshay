@@ -136,42 +136,86 @@ input, textarea {
   padding: var(--container-padding);
 }
 
+/* ===== Soft 3D Glassmorphism Section Headers ===== */
 .section-subtitle {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 2.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--primary-dark);
   margin-bottom: 12px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+  background: rgba(245, 158, 11, 0.1);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.8);
+  transform: translateZ(20px);
 }
 
 .section-subtitle::before {
   content: '';
   display: inline-block;
-  width: 30px;
-  height: 2px;
+  width: 8px;
+  height: 8px;
   background: var(--primary);
-  border-radius: 2px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--primary);
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 700;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  font-weight: 800;
   color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 16px;
+  position: relative;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
 }
 
 .section-description {
   font-size: 1.05rem;
   color: var(--text-secondary);
   line-height: 1.7;
-  max-width: 600px;
+  max-width: 620px;
+  opacity: 0.9;
+}
+
+/* Glassmorphism 3D Header Card Background */
+.destinations-header,
+.packages-header,
+.testimonials-header {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(248, 250, 252, 0.6));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  padding: 32px 40px;
+  border-radius: var(--radius-xl);
+  box-shadow: 
+    0 20px 40px -15px rgba(15, 23, 42, 0.06),
+    0 0 0 1px rgba(245, 158, 11, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
+  max-width: 720px;
+  margin: 0 auto 60px;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.destinations-header:hover,
+.packages-header:hover,
+.testimonials-header:hover {
+  transform: translateY(-4px) rotateX(2deg) rotateY(-1deg);
+  box-shadow: 
+    0 30px 50px -15px rgba(15, 23, 42, 0.1),
+    0 0 0 1px rgba(245, 158, 11, 0.18),
+    inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 /* ===== Buttons ===== */
