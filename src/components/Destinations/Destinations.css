@@ -13,10 +13,10 @@
   margin: 0 auto;
 }
 
-/* Grid */
+/* Modern Bento Grid Layout */
 .destinations-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 28px;
   max-width: var(--container-max);
   margin: 0 auto;
@@ -32,19 +32,45 @@
   transition: all var(--transition-base);
   border: 1px solid var(--border-light);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Bento Grid Spanning Rules */
+.destination-card:nth-child(1) {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.destination-card:nth-child(2),
+.destination-card:nth-child(3),
+.destination-card:nth-child(4),
+.destination-card:nth-child(5),
+.destination-card:nth-child(6) {
+  grid-column: span 2;
 }
 
 .destination-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-card-hover);
+  transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateZ(15px);
+  box-shadow: -15px 20px 35px rgba(0,0,0,0.18);
   border-color: transparent;
+  z-index: 5; /* Bring to front on hover */
 }
 
 /* Image */
 .destination-card-image {
   position: relative;
-  height: 220px;
+  flex-grow: 1; /* Stretch image to fill space */
+  min-height: 220px;
   overflow: hidden;
+}
+
+/* Taller image for the primary featured card */
+.destination-card:nth-child(1) .destination-card-image {
+  min-height: 380px;
 }
 
 .destination-card-image img {
@@ -157,13 +183,27 @@
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .destinations-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .destination-card:nth-child(1) {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+  .destination-card:nth-child(1) .destination-card-image {
+    min-height: 300px;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .destinations-grid {
     grid-template-columns: 1fr;
-    max-width: 420px;
+    max-width: 480px;
+  }
+  .destination-card:nth-child(n) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .destination-card:nth-child(1) .destination-card-image {
+    min-height: 220px;
   }
 }

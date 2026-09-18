@@ -11,7 +11,14 @@ function CTA() {
       <span className="cta-banner-decor cta-banner-decor-2">🌍</span>
 
       <div className="cta-banner-container">
-        <div className="cta-banner-icon reveal-scale">🌎</div>
+        {/* Premium 3D Hologram Scene */}
+        <div className="cta-premium-3d-scene reveal-scale">
+          <div className="cta-3d-ring"></div>
+          <div className="cta-3d-ring-2"></div>
+          <div className="cta-3d-flight-wrapper">
+            <span className="premium-flight">✈️</span>
+          </div>
+        </div>
         <h2 className="cta-banner-title reveal reveal-delay-1">
           Ready for Your Next <span>Adventure?</span>
         </h2>

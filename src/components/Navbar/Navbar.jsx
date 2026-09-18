@@ -82,35 +82,41 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Overlay */}
-      <div
-        className={`navbar-mobile-overlay ${mobileOpen ? 'active' : ''}`}
-        onClick={() => setMobileOpen(false)}
-      />
-
-      {/* Mobile Menu */}
-      <div className={`navbar-mobile-menu ${mobileOpen ? 'active' : ''}`} role="dialog" aria-label="Mobile navigation menu">
-        <div className="navbar-mobile-menu-links">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className={`navbar-mobile-menu-link ${activeLink === link.label ? 'active' : ''}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleLinkClick(link.label, link.href);
-              }}
-            >
-              {link.label}
-              {link.badge && <span className="navbar-link-badge" style={{ position: 'static' }}>{link.badge}</span>}
-            </a>
-          ))}
+      {/* Fullscreen Animated Mobile Menu */}
+      <div className={`navbar-mobile-fullscreen ${mobileOpen ? 'active' : ''}`} role="dialog" aria-label="Mobile navigation menu">
+        
+        {/* Travel Animations */}
+        <div className="mobile-bg-animations">
+          <div className="cloud cloud-1">☁️</div>
+          <div className="cloud cloud-2">☁️</div>
+          <div className="cloud cloud-3">☁️</div>
+          <div className="flying-plane">✈️</div>
         </div>
-        <div className="navbar-mobile-menu-actions">
-          <a href="https://wa.me/15551234567" className="navbar-whatsapp" onClick={() => setMobileOpen(false)}>
-            <span className="navbar-whatsapp-icon">💬</span>
-            WhatsApp Us
-          </a>
+
+        <div className="navbar-mobile-fullscreen-inner">
+          <div className="navbar-mobile-fullscreen-links">
+            {navLinks.map((link, index) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className={`navbar-mobile-fullscreen-link ${activeLink === link.label ? 'active' : ''}`}
+                style={{ '--delay': `${0.2 + (index * 0.1)}s` }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(link.label, link.href);
+                }}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+          
+          <div className="navbar-mobile-fullscreen-actions">
+            <a href="https://wa.me/15551234567" className="navbar-whatsapp" onClick={() => setMobileOpen(false)}>
+              <span className="navbar-whatsapp-icon">💬</span>
+              WhatsApp Us
+            </a>
+          </div>
         </div>
       </div>
     </nav>

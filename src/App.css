@@ -38,3 +38,77 @@
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(139, 195, 74, 0.4);
 }
+
+/* ===== Global 3D Background ===== */
+.global-3d-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-3d-element {
+  position: absolute;
+  font-size: 4rem;
+  opacity: 0.15;
+  filter: blur(2px) drop-shadow(0 20px 20px rgba(0,0,0,0.2));
+  transform-style: preserve-3d;
+}
+
+.bg-3d-plane {
+  top: 15%;
+  left: -10%;
+  animation: floatGlobalPlane 30s linear infinite;
+  font-size: 6rem;
+  opacity: 0.1;
+}
+
+.bg-3d-globe {
+  bottom: 25%;
+  right: 5%;
+  animation: spinGlobalGlobe 40s linear infinite;
+  font-size: 15rem;
+  opacity: 0.05;
+}
+
+.bg-3d-balloon {
+  top: 40%;
+  right: -5%;
+  animation: floatGlobalBalloon 45s ease-in-out infinite alternate;
+  font-size: 5rem;
+}
+
+.bg-3d-cloud-1 {
+  top: 60%;
+  left: -15%;
+  animation: floatGlobalCloud 50s linear infinite;
+  font-size: 8rem;
+}
+
+.bg-3d-cloud-2 {
+  top: 10%;
+  right: -20%;
+  animation: floatGlobalCloud 60s linear infinite reverse;
+  font-size: 12rem;
+}
+
+@keyframes floatGlobalPlane {
+  0% { transform: translate3d(0, 0, 0) rotateZ(15deg) rotateX(20deg); }
+  100% { transform: translate3d(120vw, -20vh, 100px) rotateZ(15deg) rotateX(20deg); }
+}
+
+@keyframes spinGlobalGlobe {
+  0% { transform: rotateY(0deg) rotateX(15deg); }
+  100% { transform: rotateY(360deg) rotateX(15deg); }
+}
+
+@keyframes floatGlobalBalloon {
+  0% { transform: translate3d(0, 0, 0) rotateY(-20deg); }
+  100% { transform: translate3d(-10vw, -15vh, 50px) rotateY(20deg); }
+}
+
+@keyframes floatGlobalCloud {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(120vw, 0, 0); }
+}

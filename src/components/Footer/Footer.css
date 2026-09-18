@@ -1,8 +1,10 @@
 /* ===== Footer ===== */
 .footer {
-  background: var(--bg-dark);
-  color: rgba(255,255,255,0.8);
+  background: linear-gradient(145deg, #0f0f11 0%, #1c1c1f 100%);
+  color: rgba(255,255,255,0.85);
   padding-top: 80px;
+  position: relative;
+  border-top: 4px solid var(--primary);
 }
 
 .footer-main {

@@ -1,67 +1,117 @@
-/* ===== CTA Banner ===== */
+/* ===== Modern Glassmorphism CTA Banner ===== */
 .cta-banner {
-  padding: 100px 0;
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 50%, #0d1b3e 100%);
+  padding: 120px 0;
+  /* Premium parallax photo background */
+  background: url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1600&q=80') center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
 }
 
 .cta-banner::before {
+  /* Dark overlay to ensure readability */
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(139, 195, 74, 0.12) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.cta-banner::after {
-  content: '';
-  position: absolute;
-  bottom: -30%;
-  left: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(139, 195, 74, 0.08) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
 }
 
 .cta-banner-container {
-  max-width: var(--container-max);
+  max-width: 800px;
   margin: 0 auto;
-  padding: var(--container-padding);
+  padding: 60px 40px;
   text-align: center;
   position: relative;
   z-index: 2;
+  /* Glass effect */
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
 }
 
-.cta-banner-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  display: inline-block;
-  animation: float 4s ease-in-out infinite;
+/* ===== Premium 3D Hologram Flight Scene ===== */
+.cta-premium-3d-scene {
+  perspective: 1200px;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.cta-3d-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  transform: rotateX(70deg) rotateZ(0deg);
+  animation: spinRing 12s linear infinite;
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.05);
+}
+
+.cta-3d-ring-2 {
+  position: absolute;
+  width: 135%;
+  height: 135%;
+  border: 1px solid rgba(245, 158, 11, 0.4); /* Primary color */
+  border-radius: 50%;
+  transform: rotateX(70deg) rotateZ(0deg);
+  animation: spinRing reverse 18s linear infinite;
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.cta-3d-flight-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: floatFlight 3s ease-in-out infinite alternate;
+}
+
+.premium-flight {
+  font-size: 3.5rem;
+  display: block;
+  filter: drop-shadow(0 20px 15px rgba(0,0,0,0.6));
+  animation: bankFlight 5s ease-in-out infinite alternate;
+  color: white; /* Applies to icon if it's an SVG, otherwise text-shadow for emojis */
+  text-shadow: 0 0 20px rgba(255,255,255,0.4);
+}
+
+@keyframes spinRing {
+  0% { transform: rotateX(70deg) rotateZ(0deg); }
+  100% { transform: rotateX(70deg) rotateZ(360deg); }
+}
+
+@keyframes floatFlight {
+  0% { transform: translateY(12px); }
+  100% { transform: translateY(-12px); }
+}
+
+@keyframes bankFlight {
+  0% { transform: rotateZ(35deg) rotateY(-20deg) rotateX(15deg); }
+  100% { transform: rotateZ(55deg) rotateY(20deg) rotateX(-15deg); }
 }
 
 .cta-banner-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
   font-weight: 800;
   color: var(--bg-white);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   line-height: 1.15;
 }
 
 .cta-banner-title span {
-  color: var(--primary-light);
+  color: var(--primary); /* Amber gold highlight */
 }
 
 .cta-banner-description {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.7);
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.85);
   line-height: 1.7;
   max-width: 600px;
   margin: 0 auto 40px;
@@ -70,44 +120,30 @@
 .cta-banner-actions {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
-/* Decorative elements */
+/* Hide old decorative emojis as they don't fit the premium glassmorphism theme */
 .cta-banner-decor {
-  position: absolute;
-  opacity: 0.06;
-  font-size: 8rem;
-  pointer-events: none;
-}
-
-.cta-banner-decor-1 {
-  top: 10%;
-  left: 5%;
-  transform: rotate(-20deg);
-}
-
-.cta-banner-decor-2 {
-  bottom: 10%;
-  right: 5%;
-  transform: rotate(15deg);
+  display: none;
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .cta-banner {
-    padding: 70px 0;
+    padding: 80px 20px;
+    background-attachment: scroll; /* Fixes fixed-background issues on iOS */
   }
+  
+  .cta-banner-container {
+    padding: 40px 20px;
+  }
+}
 
+@media (max-width: 640px) {
   .cta-banner-actions {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .cta-banner-actions .btn {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
+    align-items: stretch;
   }
 }
