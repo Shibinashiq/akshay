@@ -238,9 +238,9 @@ export const footerLinks = {
     { label: 'Tokyo, Japan', href: '#' },
   ],
   contact: {
-    address: '123 Travel Avenue, Suite 400, New York, NY 10001',
-    phone: '+1 (555) 123-4567',
-    email: 'hello@roamwaytours.com',
+    address: 'Roamway Tours Plaza, Main Road, India',
+    phone: '+91 8075571005',
+    email: 'info@roamwaytours.com',
     hours: 'Mon - Sat: 9:00 AM - 8:00 PM',
   },
 };

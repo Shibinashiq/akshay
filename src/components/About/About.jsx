@@ -1,5 +1,6 @@
 import { aboutStats } from '../../data/content';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import globalVisaPkgImg from '../../assets/globalvisaandpackage.png';
 import './About.css';
 
 function About() {
@@ -11,10 +12,10 @@ function About() {
         {/* Image Collage */}
         <div className="about-visual reveal-left">
           <div className="about-visual-accent"></div>
-          <div className="about-image">
+          <div className="about-image about-image-featured">
             <img
-              src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=400&h=350&fit=crop"
-              alt="Travel planning session"
+              src={globalVisaPkgImg}
+              alt="Global Visa and Package - Roamway Tours"
               loading="lazy"
             />
           </div>
@@ -44,17 +45,17 @@ function About() {
         {/* Content */}
         <div className="about-content reveal-right">
           <p className="section-subtitle">About Us</p>
-          <h2 className="section-title">Your Trusted Travel Partner Since 2012</h2>
+          <h2 className="section-title">Your Trusted Global Visa & Package Partner</h2>
           <p className="about-text">
             Founded with a passion for exploration, Roamway Tours has grown from a small
-            travel consultancy to one of the most trusted names in the industry. We
-            believe that travel is not just about destinations — it's about the experiences,
+            travel consultancy to one of the most trusted names in global visa processing and holiday packages. We
+            believe that travel is not just about destinations — it's about the seamless experiences,
             connections, and memories you create along the way. Catch your dreams with us.
           </p>
           <p className="about-text">
             Our dedicated team of travel experts works tirelessly to craft personalized
-            itineraries that match your dreams, budget, and travel style. From visa
-            processing to luxury accommodations, we handle every detail so you can
+            itineraries and fast 3-day visa processing that match your dreams, budget, and travel style. From visa
+            documentation to luxury accommodations, we handle every detail so you can
             focus on what matters — enjoying the journey.
           </p>
 
@@ -67,9 +68,8 @@ function About() {
             ))}
           </div>
 
-          <a href="#contact" className="btn btn-primary reveal reveal-delay-5">
-            Learn More About Us
-            <span className="btn-arrow">→</span>
+          <a href="https://wa.me/918075571005" target="_blank" rel="noopener noreferrer" className="btn btn-primary reveal reveal-delay-5">
+            Get Visa & Package Details →
           </a>
         </div>
       </div>

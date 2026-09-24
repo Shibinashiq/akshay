@@ -16,12 +16,17 @@ function CTA() {
           we handle everything — so you can focus on making memories that last a lifetime.
         </p>
         <div className="cta-banner-actions reveal reveal-delay-3">
-          <a href="#packages" className="btn btn-primary">
-            Start Planning Today
+          <a 
+            href="https://wa.me/918075571005?text=Hi%20Roamway%20Tours%2C%20I%20want%20to%20plan%20my%20next%20adventure." 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
+            💬 WhatsApp Us Now
             <span className="btn-arrow">→</span>
           </a>
-          <a href="tel:+15551234567" className="btn btn-white">
-            Call Us Now
+          <a href="tel:+918075571005" className="btn btn-white">
+            📞 Call +91 8075571005
           </a>
         </div>
       </div>

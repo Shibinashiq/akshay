@@ -16,6 +16,11 @@ function Destinations() {
         </p>
       </div>
 
+      {/* Mobile Swipe Hint Badge */}
+      <div className="mobile-swipe-hint">
+        <span>👈 Swipe to Explore Destinations 👉</span>
+      </div>
+
       <div className="destinations-grid">
         {destinations.map((dest, index) => (
           <article

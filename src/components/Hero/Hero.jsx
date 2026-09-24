@@ -1,4 +1,5 @@
 import { heroStats } from '../../data/content';
+import globalVisaPkgImg from '../../assets/globalvisaandpackage.png';
 import './Hero.css';
 
 function Hero() {
@@ -23,14 +24,24 @@ function Hero() {
             planning and more time exploring.
           </p>
 
-          <div className="hero-cta hero-animate hero-animate-4">
-            <a href="#packages" className="btn btn-primary">
-              Explore Holidays
-              <span className="btn-arrow">→</span>
+          {/* Ultra-Modern Interactive Hero Action Launchpad */}
+          <div className="hero-action-cards hero-animate hero-animate-4">
+            <a href="#packages" className="hero-action-card card-holidays">
+              <div className="action-card-icon">🏖️</div>
+              <div className="action-card-info">
+                <span className="action-card-title">Explore Holidays</span>
+                <span className="action-card-sub">150+ Curated Packages</span>
+              </div>
+              <span className="action-card-arrow">→</span>
             </a>
-            <a href="#contact" className="btn btn-outline">
-              Apply for Visa
-              <span className="btn-arrow">→</span>
+
+            <a href="#contact" className="hero-action-card card-visa">
+              <div className="action-card-icon">🛂</div>
+              <div className="action-card-info">
+                <span className="action-card-title">Apply for Visa</span>
+                <span className="action-card-sub">Fast 3-Day Approval</span>
+              </div>
+              <span className="action-card-arrow">→</span>
             </a>
           </div>
 
@@ -50,11 +61,11 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right Visual */}
+        {/* Right Visual featuring Global Visa & Package image */}
         <div className="hero-visual hero-animate-visual">
           <img
-            src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=700&fit=crop"
-            alt="Traveler exploring the world"
+            src={globalVisaPkgImg}
+            alt="Global Visa and Package - Roamway Tours"
             className="hero-image-main"
             loading="eager"
           />

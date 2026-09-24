@@ -5,7 +5,6 @@ import './Navbar.css';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
 
   useEffect(() => {
@@ -16,23 +15,15 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [mobileOpen]);
-
   const handleLinkClick = (label, href) => {
     setActiveLink(label);
-    setMobileOpen(false);
     const el = document.querySelector(href);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const whatsappUrl = "https://wa.me/918075571005?text=Hi%20Roamway%20Tours%2C%20I%20would%20like%20to%20inquire%20about%20holiday%20packages%20and%20visa%20services.";
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar" role="navigation" aria-label="Main navigation">
@@ -42,7 +33,7 @@ function Navbar() {
           <img src={logoImg} alt="Roamway Tours Logo" className="navbar-logo-img" />
         </a>
 
-        {/* Desktop Links */}
+        {/* Desktop Nav Links */}
         <div className="navbar-links">
           {navLinks.map((link) => (
             <a
@@ -61,77 +52,18 @@ function Navbar() {
           ))}
         </div>
 
-        {/* Desktop Actions */}
+        {/* Direct WhatsApp Contact Action (Visible on Mobile & Desktop) */}
         <div className="navbar-actions">
-          <a href="https://wa.me/15551234567" className="navbar-whatsapp" aria-label="WhatsApp Us">
-            <span className="navbar-whatsapp-icon">💬</span>
-            WhatsApp Us
-          </a>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          className={`navbar-mobile-btn ${mobileOpen ? 'active' : ''}`}
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle mobile menu"
-          aria-expanded={mobileOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-
-      {/* Modern Glassmorphic Fullscreen Mobile Navigation Drawer */}
-      <div className={`navbar-mobile-fullscreen ${mobileOpen ? 'active' : ''}`} role="dialog" aria-label="Mobile navigation menu">
-        <div className="mobile-nav-header">
-          <div className="mobile-nav-brand">
-            <img src={logoImg} alt="Roamway Tours Logo" className="mobile-nav-logo" />
-            <div className="mobile-brand-meta">
-              <span className="mobile-brand-title">ROAMWAY TOURS</span>
-              <span className="mobile-brand-sub">VIP TRAVEL & VISAS</span>
-            </div>
-          </div>
-          <button 
-            className="mobile-nav-close" 
-            onClick={() => setMobileOpen(false)}
-            aria-label="Close navigation"
+          <a 
+            href={whatsappUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="navbar-whatsapp" 
+            aria-label="Contact us on WhatsApp 8075571005"
           >
-            ✕
-          </button>
-        </div>
-
-        <div className="navbar-mobile-fullscreen-inner">
-          <div className="navbar-mobile-fullscreen-links">
-            {navLinks.map((link, index) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className={`navbar-mobile-fullscreen-link ${activeLink === link.label ? 'active' : ''}`}
-                style={{ '--delay': `${0.1 + (index * 0.08)}s` }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleLinkClick(link.label, link.href);
-                }}
-              >
-                <span className="mobile-link-num">0{index + 1}</span>
-                <span className="mobile-link-text">{link.label}</span>
-                <span className="mobile-link-arrow">→</span>
-              </a>
-            ))}
-          </div>
-
-          {/* Quick Mobile Contact Buttons */}
-          <div className="navbar-mobile-quick-contact">
-            <a href="tel:+15551234567" className="mobile-contact-card mobile-contact-call">
-              <span className="mobile-contact-icon">📞</span>
-              <span>Call Us</span>
-            </a>
-            <a href="https://wa.me/15551234567" className="mobile-contact-card mobile-contact-wa">
-              <span className="mobile-contact-icon">💬</span>
-              <span>WhatsApp</span>
-            </a>
-          </div>
+            <span className="navbar-whatsapp-icon">💬</span>
+            <span className="navbar-whatsapp-text">WhatsApp Us</span>
+          </a>
         </div>
       </div>
     </nav>
