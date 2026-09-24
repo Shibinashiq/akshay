@@ -1,15 +1,9 @@
-import { useState } from 'react';
 import { packages } from '../../data/content';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Packages.css';
 
 function Packages() {
   const sectionRef = useScrollReveal();
-  const [filter, setFilter] = useState('all');
-
-  const filteredPackages = filter === 'popular' 
-    ? packages.filter(p => p.popular) 
-    : packages;
 
   return (
     <section className="packages" id="packages" ref={sectionRef} aria-label="Travel Packages">
@@ -22,24 +16,8 @@ function Packages() {
         </p>
       </div>
 
-      {/* Modern Mobile Filter Tabs */}
-      <div className="packages-mobile-tabs">
-        <button 
-          className={`package-tab-btn ${filter === 'all' ? 'active' : ''}`}
-          onClick={() => setFilter('all')}
-        >
-          ✨ All Holiday Deals
-        </button>
-        <button 
-          className={`package-tab-btn ${filter === 'popular' ? 'active' : ''}`}
-          onClick={() => setFilter('popular')}
-        >
-          🔥 Most Popular
-        </button>
-      </div>
-
       <div className="packages-grid">
-        {filteredPackages.map((pkg, index) => (
+        {packages.map((pkg, index) => (
           <article
             key={pkg.id}
             className={`package-card ${pkg.popular ? 'popular' : ''} reveal reveal-delay-${index + 1}`}
