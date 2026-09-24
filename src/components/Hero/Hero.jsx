@@ -1,5 +1,6 @@
 import { heroStats } from '../../data/content';
 import globalVisaPkgImg from '../../assets/globalvisaandpackage.png';
+import flightExtraImg from '../../assets/extraimage.png';
 import './Hero.css';
 
 function Hero() {
@@ -35,7 +36,7 @@ function Hero() {
               <span className="action-card-arrow">→</span>
             </a>
 
-            <a href="#contact" className="hero-action-card card-visa">
+            <a href="https://wa.me/918075571005?text=Hi%20Roamway%20Tours%2C%20I%20want%20to%20apply%20for%20a%20visa." target="_blank" rel="noopener noreferrer" className="hero-action-card card-visa">
               <div className="action-card-icon">🛂</div>
               <div className="action-card-info">
                 <span className="action-card-title">Apply for Visa</span>
@@ -69,6 +70,11 @@ function Hero() {
             className="hero-image-main"
             loading="eager"
           />
+
+          {/* Flight Badge Floating Graphic */}
+          <div className="hero-flight-extra-badge">
+            <img src={flightExtraImg} alt="Flight deals" className="flight-extra-img" />
+          </div>
 
           {/* Floating Cards */}
           <div className="hero-float hero-float-1">
