@@ -454,11 +454,20 @@ input, textarea {
 @media (max-width: 768px) {
   :root {
     --section-padding: 70px 0;
-    --container-padding: 0 20px;
+    --container-padding: 0 16px;
+  }
+
+  .destinations-header,
+  .packages-header,
+  .testimonials-header {
+    padding: 24px 20px;
+    margin: 0 16px 36px;
+    max-width: calc(100% - 32px);
+    border-radius: var(--radius-lg);
   }
 
   .section-title {
-    font-size: clamp(1.7rem, 5vw, 2.2rem);
+    font-size: clamp(1.65rem, 5vw, 2.2rem);
   }
 
   .section-description {
@@ -473,7 +482,15 @@ input, textarea {
 
 @media (max-width: 480px) {
   :root {
-    --section-padding: 60px 0;
+    --section-padding: 50px 0;
     --container-padding: 0 16px;
+  }
+
+  .destinations-header,
+  .packages-header,
+  .testimonials-header {
+    padding: 20px 16px;
+    margin: 0 8px 30px;
+    max-width: calc(100% - 16px);
   }
 }

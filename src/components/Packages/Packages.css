@@ -245,7 +245,7 @@
   transform: translateY(-2px);
 }
 
-/* ===== Responsive Mobile Modern Packages Carousel ===== */
+/* ===== Responsive Mobile Modern Packages Layout ===== */
 @media (max-width: 1024px) {
   .package-card {
     height: auto;
@@ -266,43 +266,25 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .packages-grid {
     display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 18px;
-    padding: 10px 24px 30px;
-    margin: 0 -24px;
-    width: calc(100% + 48px);
-    scroll-padding-left: 24px;
-  }
-
-  .packages-grid::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  .packages-grid::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-  }
-
-  .packages-grid::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 4px;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 16px;
+    margin: 0;
+    width: 100%;
   }
 
   .package-card {
-    flex: 0 0 85vw;
-    max-width: 340px;
-    scroll-snap-align: center;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
     border-radius: var(--radius-xl);
   }
 
   .package-card-image {
-    height: 200px;
+    height: 210px;
   }
 
   .package-card-content {
@@ -310,15 +292,27 @@
   }
 
   .package-card-title {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
 
   .package-card-highlights {
-    gap: 6px;
-    margin-bottom: 16px;
+    gap: 8px;
+    margin-bottom: 20px;
   }
 
   .package-card-highlight {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .package-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .package-card-btn {
+    padding: 10px 22px;
+    font-size: 0.85rem;
   }
 }
